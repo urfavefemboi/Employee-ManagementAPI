@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  employeeapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:5000;http://+:5001
+    ports:
+      - "5000"
+      - "5001"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
